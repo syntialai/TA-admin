@@ -1,0 +1,34 @@
+@import '../base/color';
+
+/**
+ * Colors
+ */
+$color-primary: $color-teal !default;
+$color-primary-dark: $color-teal-dark !default;
+$color-primary-light: $color-teal-light !default;
+
+$color-secondary: $color-red !default;
+$color-secondary-dark: $color-red-dark !default;
+$color-secondary-light: $color-red-light !default;
+
+$color-success: $color-green !default;
+$color-danger: $color-red !default;
+$color-warning: $color-orange !default;
+
+$color-biology: $color-blue !default;
+$color-physics: $color-green !default;
+$color-math: $color-orange !default;
+$color-chemistry: $color-pink !default;
+
+/**
+ * Gradients
+ */
+$color-gradient-biology: $color-gradient-blue !default;
+$color-gradient-physics: $color-gradient-green !default;
+$color-gradient-math: $color-gradient-orange !default;
+$color-gradient-chemistry: $color-gradient-pink !default;
+
+:export {
+  colorPrimary: $color-primary;
+  colorSecondary: $color-secondary;
+}

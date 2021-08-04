@@ -1,0 +1,16 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.transparent-body {
+  background: transparent
+}
+
+.rounded-circle {
+  border-radius: 50%;
+  &--bordered {
+    border-radius: 50%;
+    border: 1px solid $color-primary;
+  }
+}

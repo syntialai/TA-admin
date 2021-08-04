@@ -10,3 +10,10 @@ export const NAVIGATION_DRAWER = () => import(
 export const SNACKBAR = () => import(
   /* webpackChunkName: "snackbar" */ '@/components/Main/Snackbar.vue'
 );
+
+/**
+ * Dialog
+ */
+export const CONFIRMATION_DIALOG = () => import(
+  /* webpackChunkName: "confirmation-dialog" */ '@/components/Dialog/ConfirmationDialog.vue'
+);

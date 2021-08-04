@@ -3,7 +3,7 @@
     id="navigation-drawer"
     app
     dark
-    mobile-break-point="960"
+    mobile-breakpoint="960"
     permanent
     src="https://demos.creative-tim.com/material-dashboard/assets/img/sidebar-1.jpg"
     v-bind="$attrs"

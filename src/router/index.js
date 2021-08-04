@@ -35,7 +35,7 @@ const routes = [
   {
     path: Paths.TEACHER_CREDENTIALS,
     name: RouteNames.TEACHER_CREDENTIALS,
-    // component: Pages.TEACHER_CREDENTIALS,
+    component: Pages.TEACHER_CREDENTIALS,
   },
 ];
 

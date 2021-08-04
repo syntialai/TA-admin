@@ -1,4 +1,4 @@
 <template>
-  <div class="sign-in">
+  <div class="sign-in-views">
   </div>
 </template>

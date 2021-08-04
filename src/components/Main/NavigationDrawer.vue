@@ -11,7 +11,7 @@
   >
     <template v-slot:img="props">
       <v-img
-        :gradient="`to bottom, rgba(50, 50, 50, .5), rgba(50, 50, 50, .5)`"
+        :gradient="`to bottom, rgba(50, 50, 50, .8), rgba(50, 50, 50, .8)`"
         v-bind="props"
       />
     </template>
@@ -44,6 +44,7 @@
 
     <v-list class="main-menu" elevation="0" nav>
       <v-list-item-group
+        v-model="menuSelected"
         exact
         exact-active-class="active"
       >
@@ -59,58 +60,52 @@
             <v-list-item-title class="text-h6">{{ menu.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-
-        <v-btn
-          class="main-menu__sign-out text-h6 mt-4"
-          block
-          large
-          @click="signOut()"
-        >
-          Sign Out
-        </v-btn>
       </v-list-item-group>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
-import * as RouteNames from '@/router/names';
+import { mapGetters, mapActions } from 'vuex';
+import { getMainMenus } from '@/config/menus';
 
 export default {
   name: 'NavigationDrawer',
 
+  computed: {
+    ...mapGetters('app', [
+      'mainMenuSelected',
+    ]),
+
+    mainMenus() {
+      return getMainMenus();
+    },
+
+    menuSelected: {
+      get() {
+        return this.mainMenuSelected;
+      },
+      set(value) {
+        this.setMainMenuSelected(value);
+      },
+    },
+  },
+
   data() {
     return {
       publicPath: process.env.BASE_URL,
-      mainMenus: [
-        {
-          icon: 'mdi-account',
-          title: RouteNames.STUDENTS,
-        },
-        {
-          icon: 'mdi-account',
-          title: RouteNames.TEACHERS,
-        },
-        {
-          icon: 'mdi-message-bulleted',
-          title: RouteNames.FEEDBACKS,
-        },
-        {
-          icon: 'mdi-lock',
-          title: RouteNames.TEACHER_CREDENTIALS,
-        },
-      ],
     };
   },
 
   methods: {
+    ...mapActions('app', [
+      'setMainMenuSelected',
+    ]),
+
     getRouteByMenu(routeName) {
       return {
         name: routeName,
       };
-    },
-
-    signOut() {
     },
   },
 };

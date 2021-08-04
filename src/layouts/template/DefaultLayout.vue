@@ -3,7 +3,11 @@
     <v-main class="flex-grow-1">
       <drawer />
 
-      <slot />
+      <div class="main-app">
+        <navigation :user="userData" />
+
+        <slot />
+      </div>
 
       <v-footer class="mt-8">
         <v-col
@@ -18,13 +22,21 @@
 </template>
 
 <script>
-import { NAVIGATION_DRAWER } from '@/router/components';
+import { mapGetters } from 'vuex';
+import { NAVIGATION, NAVIGATION_DRAWER } from '@/router/components';
 
 export default {
   name: 'DefaultLayout',
 
   components: {
     Drawer: NAVIGATION_DRAWER,
+    Navigation: NAVIGATION,
+  },
+
+  computed: {
+    ...mapGetters('user', [
+      'userData',
+    ]),
   },
 };
 </script>

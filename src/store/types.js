@@ -3,6 +3,7 @@
  */
 export const SET_APP_MESSAGE = 'SET_APP_MESSAGE';
 export const SET_IS_LOADING = 'SET_IS_LOADING';
+export const SET_MAIN_MENU_SELECTED = 'SET_MAIN_MENU_SELECTED';
 
 /**
  * Authentication

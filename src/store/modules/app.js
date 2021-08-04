@@ -9,6 +9,7 @@ const state = {
     isError: false,
   },
   isLoading: false,
+  mainMenuSelected: 0,
 };
 
 const actions = {
@@ -41,11 +42,16 @@ const actions = {
       isError: false,
     });
   },
+
+  setMainMenuSelected({ commit }, menuSelected) {
+    commit(Types.SET_MAIN_MENU_SELECTED, menuSelected);
+  },
 };
 
 const getters = {
   isLoading: (state) => state.isLoading,
   appMessage: (state) => state.appMessage,
+  mainMenuSelected: (state) => state.mainMenuSelected,
 };
 
 const mutations = {
@@ -58,6 +64,10 @@ const mutations = {
       message,
       isError,
     };
+  },
+
+  [Types.SET_MAIN_MENU_SELECTED](state, menuSelected) {
+    state.mainMenuSelected = menuSelected || 0;
   },
 };
 

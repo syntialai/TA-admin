@@ -1,0 +1,6 @@
+.filter__chevron {
+  transition: transform 0.3s ease;
+  &--closed {
+    transform: rotate(-90deg);
+  }
+}

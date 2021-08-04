@@ -1,0 +1,11 @@
+.course-card-short {
+  height: 100%;
+  &__description {
+    display: -webkit-box;
+    overflow: hidden;
+    text-align: justify;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

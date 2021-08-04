@@ -1,0 +1,35 @@
+$color-teal: #00FFCE;
+$color-teal-dark: #00CB9D;
+$color-teal-light: #6EFFFF;
+
+$color-red: #ED0027;
+$color-red-dark: #B20000;
+$color-red-light: #FF5751;
+
+$color-blue: #1782FF;
+$color-blue-light: #00D1FF;
+
+$color-green: #00D208;
+$color-green-light: #BFFF8D;
+
+$color-orange: #FF7A00;
+$color-orange-light: #FFD76F;
+
+$color-pink: #F6066B;
+$color-pink-light: #FF76B0;
+
+$color-primary: $color-teal-dark;
+$color-surface: #ffffff;
+$color-on-surface: #000000;
+$color-on-primary: #ffffff;
+
+/**
+ * Gradients
+ */
+$color-gradient-teal: linear-gradient(270deg, $color-teal 0%, rgba(255, 255, 255, 0) 100%), $color-teal-dark;
+$color-gradient-red: linear-gradient(180deg, $color-red-light 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(270deg, $color-red-light 0%, $color-red-light 22.92%, rgba(255, 255, 255, 0) 100%), $color-red;
+
+$color-gradient-blue: linear-gradient(360deg, $color-blue-light 0%, rgba(255, 255, 255, 0) 100%), $color-blue;
+$color-gradient-green: linear-gradient(360deg, $color-green-light 0%, rgba(255, 255, 255, 0) 100%), $color-green;
+$color-gradient-orange: linear-gradient(0deg, $color-orange-light 0%, rgba(255, 255, 255, 0) 100%), $color-orange;
+$color-gradient-pink: linear-gradient(0deg, $color-pink-light 0%, rgba(255, 255, 255, 0) 100%), $color-pink;

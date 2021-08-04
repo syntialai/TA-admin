@@ -11,7 +11,7 @@
   >
     <template v-slot:img="props">
       <v-img
-        :gradient="`to bottom, rgba(50, 50, 50, .5), rgba(50, 50, 50, .5)`"
+        :gradient="`to bottom, rgba(50, 50, 50, .8), rgba(50, 50, 50, .8)`"
         v-bind="props"
       />
     </template>

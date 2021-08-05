@@ -1,9 +1,9 @@
 <template>
   <div class="default-layout">
-    <v-main class="flex-grow-1">
+    <v-main>
       <drawer />
 
-      <div class="main-app">
+      <div class="main-app flex-grow-1">
         <navigation :user="userData" />
 
         <slot />

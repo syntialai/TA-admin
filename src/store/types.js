@@ -15,3 +15,9 @@ export const SET_IS_CREDENTIAL_EXISTS = 'SET_IS_CREDENTIAL_EXISTS';
  * Teacher Credentials
  */
 export const SET_CREDENTIALS_DATA = 'SET_CREDENTIALS_DATA';
+
+/**
+ * Feedback
+ */
+export const SET_FEEDBACKS = 'SET_FEEDBACKS';
+export const SET_IS_LOADING_FEEDBACKS = 'SET_IS_LOADING_FEEDBACKS';

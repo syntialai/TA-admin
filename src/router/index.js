@@ -30,7 +30,7 @@ const routes = [
   {
     path: Paths.FEEDBACKS,
     name: RouteNames.FEEDBACKS,
-    // component: Pages.FEEDBACKS,
+    component: Pages.FEEDBACKS,
   },
   {
     path: Paths.TEACHER_CREDENTIALS,

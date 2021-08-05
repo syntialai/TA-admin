@@ -10,3 +10,4 @@ export const DELETE_TOKEN_TITLE = 'Delete This Token?';
 export const DELETE_TOKEN_DESCRIPTION = 'The token will be deleted permanently and teacher won\'t be able to use the token.';
 export const DELETE_TOKEN_CANCEL = 'Cancel';
 export const DELETE_TOKEN_CONFIRM = 'Delete';
+export const FAILED_FETCH_FEEDBACKS = 'Failed to get feedbacks, please try again.';

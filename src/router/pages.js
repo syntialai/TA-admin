@@ -2,6 +2,7 @@
  * Pages
  */
 const SIGN_IN = () => import(/* webpackChunkName: "sign-in" */ '../views/SignIn/SignIn.vue');
+const STUDENTS = () => import('../views/Students/Students.vue');
 
 /**
  * Layouts
@@ -13,4 +14,5 @@ export {
   SIGN_IN,
   LAYOUT_DEFAULT,
   LAYOUT_SIGN_IN,
+  STUDENTS,
 };

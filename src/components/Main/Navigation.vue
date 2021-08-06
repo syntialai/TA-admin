@@ -33,7 +33,7 @@ export default {
   name: 'Navigation',
 
   methods: {
-    ...mapActions('signIn', [
+    ...mapActions('app', [
       'signOut',
     ]),
 

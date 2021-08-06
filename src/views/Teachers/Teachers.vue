@@ -17,17 +17,17 @@ table {
       :dialog="getActivateDialog"
       :doAction="askStoreToActivateUser"
     ></confirmation-dialog>
-    <div class="students__container">
+    <div class="teachers__container">
       <v-skeleton-loader
         v-if="isLoading"
         type="table"></v-skeleton-loader>
       <v-data-table
         v-else
         :headers="headers"
-        :items="studentInfo"
+        :items="teacherInfo"
         :items-per-page="10"
         :search="search"
-        class="elevation-2 my-8 pt-4 rounded-lg students__container__table">
+        class="elevation-2 my-8 pt-4 rounded-lg teachers__container__table">
         <template v-slot:item="row">
           <tr>
             <td>{{ row.item.name }}</td>
@@ -82,7 +82,7 @@ import { CONFIRMATION_DIALOG } from '@/router/components';
 import * as dialogConstants from '@/config/dialog-constants';
 
 export default {
-  name: 'Students',
+  name: 'Teachers',
 
   components: {
     ConfirmationDialog: CONFIRMATION_DIALOG,
@@ -90,7 +90,7 @@ export default {
 
   async created() {
     this.setIsLoading();
-    await this.getStudentsDataFromApi();
+    await this.getTeachersDataFromApi();
     this.setIsNotLoading();
   },
 
@@ -110,17 +110,17 @@ export default {
         user: null,
       },
       headers: [
-        { text: 'STUDENT NAME', sortable: false, value: 'name' },
-        { text: 'STUDENT EMAIL', sortable: false, value: 'email' },
+        { text: 'TEACHER NAME', sortable: false, value: 'name' },
+        { text: 'TEACHER EMAIL', sortable: false, value: 'email' },
         { text: 'ACTION', sortable: false, value: 'deactivated' },
       ],
     };
   },
 
   methods: {
-    ...mapActions('students', [
-      'getStudentsDataFromApi',
-      'updateStudent',
+    ...mapActions('teachers', [
+      'getTeachersDataFromApi',
+      'updateTeacher',
       'resetState',
     ]),
     ...mapActions('app', [
@@ -128,10 +128,10 @@ export default {
       'setIsNotLoading',
     ]),
     async askStoreToActivateUser() {
-      await this.updateStudent({ user: this.activateDialog.user, deactivated: false });
+      await this.updateTeacher({ user: this.activateDialog.user, deactivated: false });
     },
     async askStoreToDeactivateUser() {
-      await this.updateStudent({ user: this.deactivateDialog.user, deactivated: true });
+      await this.updateTeacher({ user: this.deactivateDialog.user, deactivated: true });
     },
     openActivateUserDialog(user) {
       this.activateDialog.show = true;
@@ -147,19 +147,19 @@ export default {
     ...mapGetters('app', [
       'isLoading',
     ]),
-    ...mapGetters('students', [
-      'studentInfo',
+    ...mapGetters('teachers', [
+      'teacherInfo',
     ]),
     getDeactivateDialog() {
       return {
-        title: dialogConstants.DEACTIVATE_STUDENT_TITLE,
+        title: dialogConstants.DEACTIVATE_TEACHER_TITLE,
         closeButton: dialogConstants.DEACTIVATE_USER_CANCEL,
         confirmButton: dialogConstants.DEACTIVATE_USER_CONFIRM,
       };
     },
     getActivateDialog() {
       return {
-        title: dialogConstants.ACTIVATE_STUDENT_TITLE,
+        title: dialogConstants.ACTIVATE_TEACHER_TITLE,
         closeButton: dialogConstants.ACTIVATE_USER_CANCEL,
         confirmButton: dialogConstants.ACTIVATE_USER_CONFIRM,
       };

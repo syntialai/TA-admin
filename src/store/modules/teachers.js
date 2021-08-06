@@ -1,44 +1,44 @@
 /* eslint-disable no-shadow */
-import { getStudentsData, updateUser } from '@/api/data/user/user.api';
+import { getTeachersData, updateUser } from '@/api/data/user/user.api';
 import * as Types from '@/store/types';
 // import * as Messages from '@/config/message-constants';
 
 const namespaced = true;
 
 const state = {
-  studentInfo: [],
+  teacherInfo: [],
 };
 
 const actions = {
   resetState({ commit }) {
-    commit(Types.RESET_STUDENTS_STATE);
+    commit(Types.RESET_TEACHERS_STATE);
   },
 
-  async getStudentsDataFromApi({ commit }) {
-    const studentInfo = await getStudentsData();
-    commit(Types.SET_STUDENT_INFO, studentInfo);
+  async getTeachersDataFromApi({ commit }) {
+    const teacherInfo = await getTeachersData();
+    commit(Types.SET_TEACHER_INFO, teacherInfo);
   },
 
-  async updateStudent({ dispatch }, { user, deactivated }) {
+  async updateTeacher({ dispatch }, { user, deactivated }) {
     const newUserData = { ...user };
     newUserData.deactivated = deactivated;
     dispatch('app/setIsLoading', null, { root: true });
     await updateUser(newUserData.id, newUserData);
-    await dispatch('getStudentsDataFromApi');
+    await dispatch('getTeachersDataFromApi');
     dispatch('app/setIsNotLoading', null, { root: true });
   },
 };
 
 const getters = {
-  studentInfo: (state) => state.studentInfo,
+  teacherInfo: (state) => state.teacherInfo,
 };
 
 const mutations = {
-  [Types.RESET_STUDENTS_STATE](state) {
-    state.studentInfo = [];
+  [Types.RESET_TEACHERS_STATE](state) {
+    state.teacherInfo = [];
   },
-  [Types.SET_STUDENT_INFO](state, studentInfo) {
-    state.studentInfo = studentInfo;
+  [Types.SET_TEACHER_INFO](state, teacherInfo) {
+    state.teacherInfo = teacherInfo;
   },
 };
 

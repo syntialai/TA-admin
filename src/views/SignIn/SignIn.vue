@@ -55,7 +55,6 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import { STUDENTS } from '@/router/names';
 
 export default {
   name: 'SignIn',
@@ -71,10 +70,15 @@ export default {
     };
   },
 
+  destroyed() {
+    this.resetState();
+  },
+
   methods: {
     ...mapActions('app', [
       'setIsLoading',
       'setIsNotLoading',
+      'setNavigateToHome',
     ]),
 
     ...mapActions('signIn', [
@@ -82,7 +86,7 @@ export default {
       'setPassword',
       'signIn',
       'getUserAuth',
-      'setNavigateToHome',
+      'resetState',
     ]),
 
     async signInIfFormValid() {
@@ -122,17 +126,6 @@ export default {
       set(value) {
         return this.setPassword({ password: value });
       },
-    },
-  },
-
-  watch: {
-    shouldNavigateToHome(value) {
-      if (value && this.$route.name !== STUDENTS) {
-        this.$router.push({
-          name: STUDENTS,
-        });
-        this.setNavigateToHome(false);
-      }
     },
   },
 };

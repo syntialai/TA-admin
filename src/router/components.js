@@ -10,9 +10,14 @@ export const NAVIGATION_DRAWER = () => import(
 export const SNACKBAR = () => import(
   /* webpackChunkName: "snackbar" */ '@/components/Main/Snackbar.vue'
 );
+
+/**
+ * Dialog
+ */
 export const CONFIRMATION_DIALOG = () => import(
-  '@/components/Dialog/ConfirmationDialog.vue'
+  /* webpackChunkName: "confirmation-dialog" */ '@/components/Dialog/ConfirmationDialog.vue'
 );
+
 export const USER_TABLE = () => import(
   '@/components/Main/UserTable.vue'
 );

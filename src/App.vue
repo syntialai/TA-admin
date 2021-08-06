@@ -18,7 +18,7 @@ import { SNACKBAR } from '@/router/components';
 import { LAYOUT_DEFAULT, LAYOUT_SIGN_IN } from '@/router/pages';
 import * as Layouts from '@/layouts/layouts';
 import { mapGetters, mapActions } from 'vuex';
-import { SIGN_IN } from '@/router/names';
+import { SIGN_IN, STUDENTS } from '@/router/names';
 
 export default {
   name: 'App',
@@ -34,22 +34,18 @@ export default {
   },
 
   methods: {
-    ...mapActions('signIn', [
-      'getUserAuth',
-    ]),
-
-    ...mapActions('signIn', [
+    ...mapActions('app', [
       'setNavigateToSignIn',
+      'setNavigateToHome',
+      'getUserAuth',
     ]),
   },
 
   computed: {
     ...mapGetters('app', [
       'appMessage',
-    ]),
-
-    ...mapGetters('signIn', [
       'navigateToSignIn',
+      'navigateToHome',
     ]),
 
     layout() {
@@ -59,13 +55,20 @@ export default {
 
   watch: {
     navigateToSignIn(value) {
-      console.log(value, this.$route.name);
       if (value && this.$route.name !== SIGN_IN) {
         this.$router.push({
           name: SIGN_IN,
         });
-        this.setNavigateToSignIn(false);
       }
+      this.setNavigateToSignIn(false);
+    },
+    navigateToHome(value) {
+      if (value && this.$route.name !== STUDENTS) {
+        this.$router.push({
+          name: STUDENTS,
+        });
+      }
+      this.setNavigateToHome(false);
     },
   },
 };

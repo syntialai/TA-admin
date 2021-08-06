@@ -18,12 +18,19 @@ export const SET_EMAIL = 'SET_EMAIL';
 export const SET_PASSWORD = 'SET_PASSWORD';
 export const SET_NAVIGATE_TO_HOME = 'SET_NAVIGATE_TO_HOME';
 export const SET_NAVIGATE_TO_SIGN_IN = 'SET_NAVIGATE_TO_SIGN_IN';
+export const RESET_SIGN_IN_STATE = 'RESET_SIGN_IN_STATE';
 
 /**
  * Students
  */
 export const SET_STUDENT_INFO = 'SET_STUDENT_INFO';
 export const RESET_STUDENTS_STATE = 'RESET_STUDENTS_STATE';
+
+/**
+ * Teachers
+ */
+export const SET_TEACHER_INFO = 'SET_TEACHER_INFO';
+export const RESET_TEACHERS_STATE = 'RESET_TEACHERS_STATE';
 
 /**
  * Home
@@ -125,3 +132,7 @@ export const SET_ENROLLMENT_KEY = 'SET_ENROLLMENT_KEY';
 export const SET_CHAPTER_SUMMARY_LIST = 'SET_CHAPTER_SUMMARY_LIST';
 export const SET_IS_LOAD_COURSE = 'SET_IS_LOAD_COURSE';
 export const SET_SUBMITTED_COURSE_ID = 'SET_SUBMITTED_COURSE_ID';
+/**
+ * Teacher Credentials
+ */
+export const SET_CREDENTIALS_DATA = 'SET_CREDENTIALS_DATA';

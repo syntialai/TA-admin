@@ -16,7 +16,7 @@
         <v-spacer></v-spacer>
         <v-btn
           v-if="dialog.closeButton"
-          color="red darken-1"
+          color="grey"
           text
           @click="closeDialog"
         >
@@ -24,7 +24,7 @@
         </v-btn>
         <v-btn
           v-if="dialog.confirmButton"
-          color="green darken-1"
+          color="red darken-1"
           text
           @click="confirmAction"
         >

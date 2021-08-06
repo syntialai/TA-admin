@@ -20,12 +20,12 @@ const routes = [
   {
     path: Paths.STUDENTS,
     name: RouteNames.STUDENTS,
-    // component: Pages.STUDENTS,
+    component: Pages.STUDENTS,
   },
   {
     path: Paths.TEACHERS,
     name: RouteNames.TEACHERS,
-    // component: Pages.TEACHERS,
+    component: Pages.TEACHERS,
   },
   {
     path: Paths.FEEDBACKS,

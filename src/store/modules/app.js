@@ -1,4 +1,6 @@
 /* eslint-disable no-shadow */
+import { auth } from '@/plugins/firebase';
+import { signOut } from '@/api/data/auth/auth.api';
 import * as Types from '@/store/types';
 
 const namespaced = true;
@@ -10,6 +12,8 @@ const state = {
   },
   isLoading: false,
   mainMenuSelected: 0,
+  navigateToHome: false,
+  navigateToSignIn: false,
 };
 
 const actions = {
@@ -46,12 +50,37 @@ const actions = {
   setMainMenuSelected({ commit }, menuSelected) {
     commit(Types.SET_MAIN_MENU_SELECTED, menuSelected);
   },
+
+  async getUserAuth({ commit }) {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        commit(Types.SET_NAVIGATE_TO_HOME, true);
+      } else {
+        commit(Types.SET_NAVIGATE_TO_SIGN_IN, true);
+      }
+    });
+  },
+
+  setNavigateToHome({ commit }, navigateToHome) {
+    commit(Types.SET_NAVIGATE_TO_HOME, navigateToHome);
+  },
+
+  setNavigateToSignIn({ commit }, navigateToSignIn) {
+    commit(Types.SET_NAVIGATE_TO_SIGN_IN, navigateToSignIn);
+  },
+
+  async signOut({ commit }) {
+    await signOut();
+    commit(Types.SET_NAVIGATE_TO_SIGN_IN, true);
+  },
 };
 
 const getters = {
   isLoading: (state) => state.isLoading,
   appMessage: (state) => state.appMessage,
   mainMenuSelected: (state) => state.mainMenuSelected,
+  navigateToHome: (state) => state.navigateToHome,
+  navigateToSignIn: (state) => state.navigateToSignIn,
 };
 
 const mutations = {
@@ -68,6 +97,12 @@ const mutations = {
 
   [Types.SET_MAIN_MENU_SELECTED](state, menuSelected) {
     state.mainMenuSelected = menuSelected || 0;
+  },
+  [Types.SET_NAVIGATE_TO_HOME](state, navigateToHome) {
+    state.navigateToHome = navigateToHome;
+  },
+  [Types.SET_NAVIGATE_TO_SIGN_IN](state, navigateToSignIn) {
+    state.navigateToSignIn = navigateToSignIn;
   },
 };
 

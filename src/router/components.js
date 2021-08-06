@@ -17,3 +17,7 @@ export const SNACKBAR = () => import(
 export const CONFIRMATION_DIALOG = () => import(
   /* webpackChunkName: "confirmation-dialog" */ '@/components/Dialog/ConfirmationDialog.vue'
 );
+
+export const USER_TABLE = () => import(
+  '@/components/Main/UserTable.vue'
+);

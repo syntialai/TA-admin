@@ -3,8 +3,8 @@
     <v-main>
       <drawer />
 
-      <div class="main-app flex-grow-1">
-        <navigation :user="userData" />
+      <div class="main-app">
+        <navigation />
 
         <slot />
       </div>
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import { NAVIGATION, NAVIGATION_DRAWER } from '@/router/components';
 
 export default {
@@ -34,9 +33,7 @@ export default {
   },
 
   computed: {
-    ...mapGetters('user', [
-      'userData',
-    ]),
+
   },
 };
 </script>

@@ -1,40 +1,6 @@
-// $color-sign-in-background: linear-gradient(245.5deg, #C1FFC1 3.5%, rgba(255, 255, 255, 0) 66.52%), $color-primary;
-
-// .sign-in-background {
-//   background: $color-sign-in-background;
-//   padding: 0;
-//   overflow-y: hidden;
-
-//   @media screen and (min-width: 600px) {
-//     padding: 20px 25px;
-//   }
-  
-//   @media screen and (min-width: 750px) {
-//     padding: 40px 50px;
-//   }
-  
-//   @media screen and (min-width: 900px) {
-//     padding: 80px 100px;
-//   }
-// }
-
-// .sign-in-container {
-//   background: white;
-//   box-shadow: $elevation-style;
-// }
-
-// .sign-in-wrapper {
-//   padding: 60px 24px!important;
-
-//   @media screen and (min-width: 600px) {
-//     padding: 90px 24px!important;
-//   }
-  
-//   @media screen and (min-width: 900px) {
-//     padding: 120px 24px!important;
-//   }
-// }
-
-// .sign-in-image {
-//   padding: 0!important;
-// }
+.sign-in {
+  background-image: linear-gradient(rgba(50, 50, 50, 0.8), rgba(50, 50, 50, 0.8)), url("https://www.desktopbackground.org/download/3840x2400/2015/05/13/947756_material-design-snowcap-wallpapers-8k-resolution-by-elite001mm-on_7680x4320_h.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}

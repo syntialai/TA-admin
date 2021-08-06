@@ -11,6 +11,7 @@ const TEACHER_CREDENTIALS = () => import(/* webpackChunkName: "teacher-credentia
  */
 const LAYOUT_DEFAULT = () => import('../layouts/template/DefaultLayout.vue');
 const LAYOUT_SIGN_IN = () => import('../layouts/template/SignInLayout.vue');
+const FEEDBACKS = () => import('../views/Feedback/Feedbacks.vue');
 
 export {
   SIGN_IN,
@@ -19,4 +20,5 @@ export {
   LAYOUT_SIGN_IN,
   STUDENTS,
   TEACHERS,
+  FEEDBACKS,
 };
